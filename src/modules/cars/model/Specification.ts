@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid'
 
-class Specifcation{
+class Specification{
     id?: string
     name: string
     description: string
@@ -13,4 +13,4 @@ class Specifcation{
     }
 
 }
-export {Specifcation}
+export {Specification}
