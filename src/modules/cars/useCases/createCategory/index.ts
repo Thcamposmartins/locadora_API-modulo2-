@@ -2,8 +2,10 @@ import { CategoriesRepository } from "../../repositories/implementations/Categor
 import { CraeteCategoryController } from "./CreateCategoryController";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
-const categoriesRepository = CategoriesRepository.getInstance()
-const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository)
-const craeteCategoryController = new CraeteCategoryController(createCategoryUseCase)
+export default (): CraeteCategoryController =>{
+    const categoriesRepository = new CategoriesRepository()
+    const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository)
+    const craeteCategoryController = new CraeteCategoryController(createCategoryUseCase)
 
-export{craeteCategoryController}
+    return craeteCategoryController
+}
