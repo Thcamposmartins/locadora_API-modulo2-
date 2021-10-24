@@ -1,17 +1,15 @@
 import { Router } from 'express'
 
-import { craeteSpecificationController } from '../modules/cars/useCases/createSpecification'
-import { listSpecificationController } from '../modules/cars/useCases/listSpecification'
+import { CraeteSpecificationController } from '../modules/cars/useCases/createSpecification/CreateSpecificationController'
+import { ListSpecificationController } from '../modules/cars/useCases/listSpecification/ListSpecificationController'
 
 const specificationRoutes = Router()
+const craeteSpecificationController = new CraeteSpecificationController()
+const listSpecificationController = new ListSpecificationController()
 
-specificationRoutes.post('/', (request, response)=>{
-    craeteSpecificationController.handle(request,response)
-})
 
-specificationRoutes.get("/",(request, response)=>{
-    listSpecificationController.handle(request,response)
+specificationRoutes.post("/", craeteSpecificationController.handle)
 
-})
+specificationRoutes.get("/",listSpecificationController.handle)
 
 export {specificationRoutes}

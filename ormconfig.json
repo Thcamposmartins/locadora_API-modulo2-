@@ -6,7 +6,8 @@
     "password": "thlocadora",
     "database": "locadora",
     "migrations": ["./src/database/migrations/*.ts"],
-    "cli":{
-        "migrationsDir": "./src/database/migrations"
+    "entities": ["./src/modules/**/entities/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/database/migrations"
     }
 }
