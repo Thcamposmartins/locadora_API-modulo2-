@@ -22,6 +22,9 @@ export async function ensureAuthenticated(request: Request, response:Response, n
         if(!user){
             throw new AppError("User does not exists 🤦‍♀️🤦‍♂️",401)
         }
+        request.user ={
+            id: user_id
+        }
 
         next()
     } catch (error) {
