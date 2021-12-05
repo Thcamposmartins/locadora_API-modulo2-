@@ -5,7 +5,7 @@ import swaggerUi from 'swagger-ui-express'
 import swaggerFile from '../../../swagger.json'
 import { router } from './routes'
 import { AppError } from '../../error/AppError'
-import '../../../database'
+import '../typeorm'
 import '../../container'
 
 const app = express()
